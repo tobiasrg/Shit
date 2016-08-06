@@ -2,18 +2,20 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-class Program extends JFrame {
+class Program extends JFrame implements ActionListener {
     JTextField field;
     JLabel message;
 
     Program() {
-        setLayout(new FlowLayout());
-        JLabel message = new JLabel("Käften");
-        add(message);
-        field = new JTextField(30);
-        add(field);
-        JButton button = new JButton("suckadick");
-        add(button);
+        setLayout(new BorderLayout());
+        JPanel north = new JPanel();
+        north.add(new JTextField(10));
+        north.add(new JButton("11111111"));
+        add(north, BorderLayout.NORTH);
+
+        JPanel center = new JPanel();
+        center.add (new JScrollPane(new JTextArea()));
+        add(center, BorderLayout.CENTER);
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(400, 300);
@@ -22,6 +24,11 @@ class Program extends JFrame {
 
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+
+    }
 
     public static void main(String[] args) {
         Program p1 = new Program();
